@@ -4,10 +4,10 @@ import Field from "../Field";
 
 export default class Star extends WithCoordinate {
   private field: Field;
-  ships: number | null[];
-  bases: number | null[];
-  heroes: number | null[];
-  colonies: number | null[];
+  ships: null[] | Card[];
+  bases: null[] | Card[];
+  heroes: null[] | Card[];
+  colonies: null[] | Card[];
 
   public constructor(field: Field, y: number, x: number) {
     super(x, y);
@@ -26,15 +26,15 @@ export default class Star extends WithCoordinate {
     return this.heroes[slot] ?? Card.AbsentHero;
   }
 
-  ship(slot) {
+  ship(slot: number) {
     return this.ships[slot] ?? Card.AbsentShip;
   }
 
-  colony(slot) {
+  colony(slot: number) {
     return this.colonies[slot] ?? Card.AbsentColony;
   }
 
-  put(card, slot) {
+  put(card: Card | string, slot: number) {
     card = Card.assert(card);
     if (card.isBase) {
       return this.putToSlot(card, slot, this.bases);
@@ -48,7 +48,7 @@ export default class Star extends WithCoordinate {
     Assert.error("wrong card type", card);
   }
 
-  putToSlot(card, slot, slots) {
+  putToSlot(card: Card, slot: number, slots: null[] | Card[]) {
     if (slots[slot] === undefined) {
       Assert.error("non-existent slot", slot);
     }
@@ -56,6 +56,7 @@ export default class Star extends WithCoordinate {
       Assert.error("slot already taken", slot);
     }
     slots[slot] = card;
+
     return this;
   }
 }
