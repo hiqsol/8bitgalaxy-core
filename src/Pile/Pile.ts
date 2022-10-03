@@ -2,10 +2,13 @@ import Card from "../Card";
 import Direction from "../Direction";
 
 export default class Pile {
-  constructor(type, direction) {
+  private readonly _cards: Card[];
+  private readonly _type: any;
+  private readonly _direction: any;
+
+  constructor(type: string, direction: string | Direction) {
     this._type = type;
     this._direction = Direction.assert(direction);
-    let card = Card.assert("absent " + type);
     this._cards = [];
   }
 
@@ -29,11 +32,11 @@ export default class Pile {
     return this._cards[i] ?? (i === 0 ? this.top : null);
   }
 
-  putUnder(card) {
+  putUnder(card: any) {
     this._cards.unshift(Card.assert(card));
   }
 
-  put(card) {
+  put(card: string | Card) {
     this._cards.push(Card.assert(card));
   }
 }
