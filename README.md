@@ -12,6 +12,14 @@ npm i
 
 Write your code in **src** folder
 
+Use in `8bitgalaxy`
+
+```typescript
+import Demo from "8bitgalaxy-core";
+
+const game = (new Demo()).game;
+```
+
 ## Test
 
 Write your unit test in **test** folder, then run:
