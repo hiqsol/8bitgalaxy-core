@@ -28,7 +28,7 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
-        node: [12.x, 14.x, 16.x]
+        node: [ 16.x ]
 
     steps:
       - uses: actions/checkout@v2
@@ -37,6 +37,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Install modules
-        run: yarn
+        run: npm ci
       - name: Run tests
-        run: yarn test
+        run: npm test
