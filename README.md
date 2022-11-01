@@ -1,4 +1,5 @@
 ![test](https://github.com/hiqsol/8bitgalaxy-core/actions/workflows/test.yml/badge.svg)
+![publish](https://github.com/hiqsol/8bitgalaxy-core/actions/workflows/publish.yml/badge.svg)
 
 ## Install dependencies
 
