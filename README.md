@@ -1,3 +1,5 @@
+![test](https://github.com/hiqsol/8bitgalaxy-core/actions/workflows/test.yml/badge.svg)
+
 ## Install dependencies
 
 Install dependencies with npm:
