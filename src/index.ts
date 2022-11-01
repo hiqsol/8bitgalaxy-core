@@ -1,27 +1,23 @@
-import Board from "./Board";
-import Card from "./Card";
-import Direction from "./Direction";
-import Field from "./Field";
-import Game from "./Game";
-import Generator from "./Generator";
-import Home from "./Home";
-import Pile from "./Pile";
-import Player from "./Player";
-import Row from "./Row";
-import Star from "./Star";
-import Demo from "./Demo";
+import Assert from "./Model/Assert";
+import Game from "./Game.js";
+import Demo from "./Demo.js";
+import Card from "./Model/Card.js";
+import Board from "./Model/Board.js";
+import Field from "./Model/Field.js";
+import Pile from "./Model/Pile.js";
+import Row from "./Model/Row.js";
+import Star from "./Model/Star.js";
+import Validator from "./Model/Validator.js";
 
-export {
-  Board,
-  Card,
-  Direction,
-  Field,
+export default {
+  Assert,
   Game,
-  Generator,
-  Home,
+  Demo,
+  Card,
+  Board,
+  Field,
   Pile,
-  Player,
   Row,
   Star,
-  Demo,
+  Validator,
 };
